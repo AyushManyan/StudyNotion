@@ -14,11 +14,11 @@ const CodeBlocks = ({
     codeColor
 }) => {
     return (
-        <div className={`flex ${position} my-20 justify-between gap-10 `} >
+        <div className={`flex ${position} my-20 justify-between flex-col lg:gap-10 gap-10`} >
             {/* {section 1} */}
-            <div className='w-[50%] flex flex-col gap-8'>
+            <div className='w-[100%] lg:w-[50%] flex flex-col gap-8'>
                 {heading}
-                <div className='text-richblack-300 font-bold'>
+                <div className='text-richblack-300 text-base font-bold w-[85%] -mt-3'>
                     {subheading}
                 </div>
 
@@ -40,9 +40,10 @@ const CodeBlocks = ({
 
             {/* {section 2} */}
 
-            <div className='h-fit flex flex-row text-10[px] w-[100%] py-4 lg:w-[500px]'>
+            <div className='h-fit code-border flex flex-row py-3 text-[10px] sm:text-sm leading-[18px] sm:leading-6 relative w-[100%] lg:w-[470px]'>
+                {backgroundGradient}
                 {/* bg gradient */}
-                <div className='text-center flex flex-col x-[10%] text-richblack-400 font-inter font-bold'>
+                <div className='text-center flex flex-col   w-[10%] select-none text-richblack-400 font-inter font-bold'>
                     <p>1</p>
                     <p>2</p>
                     <p>3</p>
