@@ -9,6 +9,8 @@ import TimelineSection from '../components/cores/HomePage/TimelineSection';
 import LearningLanguageSection from '../components/cores/HomePage/LearningLanguageSection';
 import InstructorSection from "../components/cores/HomePage/InstructorSection"
 import ReviewSlider from "../components/cores/HomePage/ReviewSlider"
+import Footer from '../components/common/Footer';
+import ExploreMore from '../components/cores/HomePage/ExploreMore';
 
 
 function Home() {
@@ -130,6 +132,9 @@ function Home() {
                     ></CodeBlocks>
                 </div>
 
+
+                <ExploreMore/>
+
             </div>
 
 
@@ -214,6 +219,8 @@ function Home() {
 
 
             {/* footer */}
+            <Footer />
+
         </div>
     )
 }
