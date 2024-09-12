@@ -5,6 +5,7 @@ const userRoute = require("./routes/User");
 const profilRoute = require("./routes/profile");
 const paymentRoute = require("./routes/Payments");
 const courseRoute = require("./routes/Course");
+const contactUsRoute = require("./routes/Contact");
 
 
 const database = require("./config/database");
@@ -47,6 +48,7 @@ app.use("/api/v1/auth",userRoute);
 app.use("/api/v1/profile",profilRoute);
 app.use("/api/v1/course",courseRoute);
 app.use("/api/v1/payment",paymentRoute);
+app.use("/api/v1/reach", contactUsRoute);
 
 
 // default route
