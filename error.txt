@@ -1,0 +1,11 @@
+localstorage importance -----error
+about us page reder as profile page because - > i used  {/* <Route
+          path="about"
+          element={
+            <OpenRoute>
+              <About />
+            </OpenRoute>
+          }
+        /> */}
+
+ insted  of  <Route path="/about" element={<About />} />      also check diffrence

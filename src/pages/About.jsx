@@ -13,7 +13,7 @@ import Footer from '../components/common/Footer';
 
 const About = () => {
     return (
-        <div className='mt-[100px]'>
+        <div className=''>
             {/* section 1 */}
             <section className='bg-richblack-700'>
                 <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-center text-white">
