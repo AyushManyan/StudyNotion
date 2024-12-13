@@ -162,7 +162,7 @@ exports.updateSubSection = async (req, res) => {
 
     // find updated section and return it
     const updatedSection = await Section.findById(sectionId).populate(
-      "subSection"
+      "SubSection"
     )
 
     console.log("updated section", updatedSection)
@@ -202,7 +202,7 @@ exports.deleteSubSection = async (req, res) => {
 
     // find updated section and return it
     const updatedSection = await Section.findById(sectionId).populate(
-      "subSection"
+      "SubSection"
     )
 
     return res.json({

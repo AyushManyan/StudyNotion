@@ -26,6 +26,9 @@ import Settings from "./components/cores/Dashboard/Settings"
 import EnrolledCourses from "./components/cores/Dashboard/EnrolledCourses"
 import Cart from "./components/cores/Dashboard/Cart"
 import AddCourse from "./components/cores/Dashboard/AddCourse"
+import MyCourse from "./components/cores/Dashboard/MyCourses";
+import EditCourse from "./components/cores/Dashboard/EditCourse";
+
 
 
 import { getUserDetails } from "./services/operations/profileAPI"
@@ -128,13 +131,13 @@ function App() {
 
 {user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
             <>
-              {/* <Route path="dashboard/instructor" element={<Instructor />} />
-              <Route path="dashboard/my-courses" element={<MyCourses />} /> */}
+              {/* <Route path="dashboard/instructor" element={<Instructor />} /> */}
+              <Route path="dashboard/my-courses" element={<MyCourse />} />
               <Route path="dashboard/add-course" element={<AddCourse />} />
-              {/* <Route
+              <Route
                 path="dashboard/edit-course/:courseId"
                 element={<EditCourse />}
-              /> */}
+              />
             </>
           )}
 

@@ -143,7 +143,7 @@ exports.createSection = async (req, res) => {
     // Create a new section with the given name
     const newSection = await Section.create({ sectionName })
 
-    console.log(newSection);
+    // console.log(newSection);
     
     // Add the new section to the course's content array
     const updatedCourse = await Course.findByIdAndUpdate(
@@ -182,21 +182,27 @@ exports.createSection = async (req, res) => {
 // UPDATE a section
 exports.updateSection = async (req, res) => {
   try {
-    const { sectionName, sectionId, courseId } = req.body
+    // console.log("in udapate section try block" );
+    
+    const { sectionName, sectionId, courseId } = req.body;
+    // console.log("sectionName, sectionId, courseId",sectionName, sectionId, courseId);
     const section = await Section.findByIdAndUpdate(
       sectionId,
       { sectionName },
       { new: true }
     )
+    // console.log("section",section);
+    // console.log("befor course update" );
+    
     const course = await Course.findById(courseId)
       .populate({
         path: "courseContent",
         populate: {
-          path: "subSection",
+          path: "SubSection",
         },
       })
       .exec()
-    console.log(course)
+    // console.log(course)
     res.status(200).json({
       success: true,
       message: section,
@@ -222,7 +228,7 @@ exports.deleteSection = async (req, res) => {
       },
     })
     const section = await Section.findById(sectionId)
-    console.log(sectionId, courseId)
+    // console.log(sectionId, courseId)
     if (!section) {
       return res.status(404).json({
         success: false,
@@ -239,7 +245,7 @@ exports.deleteSection = async (req, res) => {
       .populate({
         path: "courseContent",
         populate: {
-          path: "subSection",
+          path: "SubSection",
         },
       })
       .exec()

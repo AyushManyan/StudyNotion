@@ -481,7 +481,7 @@ exports.editCourse = async (req, res) => {
 
     // If Thumbnail Image is found, update it
     if (req.files) {
-      console.log("thumbnail update")
+      // console.log("thumbnail update")
       const thumbnail = req.files.thumbnailImage
       const thumbnailImage = await uploadImageToCloudinary(
         thumbnail,
@@ -517,7 +517,7 @@ exports.editCourse = async (req, res) => {
       .populate({
         path: "courseContent",
         populate: {
-          path: "subSection",
+          path: "SubSection",
         },
       })
       .exec()
@@ -697,7 +697,7 @@ exports.getFullCourseDetails = async (req, res) => {
       .populate({
         path: "courseContent",
         populate: {
-          path: "subSection",
+          path: "SubSection",
         },
       })
       .exec()
@@ -707,7 +707,7 @@ exports.getFullCourseDetails = async (req, res) => {
       userId: userId,
     })
 
-    console.log("courseProgressCount : ", courseProgressCount)
+    // console.log("courseProgressCount : ", courseProgressCount)
 
     if (!courseDetails) {
       return res.status(400).json({
@@ -725,8 +725,8 @@ exports.getFullCourseDetails = async (req, res) => {
 
     let totalDurationInSeconds = 0
     courseDetails.courseContent.forEach((content) => {
-      content.subSection.forEach((subSection) => {
-        const timeDurationInSeconds = parseInt(subSection.timeDuration)
+      content.SubSection.forEach((subSection) => {
+        const timeDurationInSeconds = parseInt(SubSection.timeDuration)
         totalDurationInSeconds += timeDurationInSeconds
       })
     })
@@ -801,7 +801,7 @@ exports.deleteCourse = async (req, res) => {
       // Delete sub-sections of the section
       const section = await Section.findById(sectionId)
       if (section) {
-        const subSections = section.subSection
+        const subSections = section.SubSection
         for (const subSectionId of subSections) {
           await SubSection.findByIdAndDelete(subSectionId)
         }

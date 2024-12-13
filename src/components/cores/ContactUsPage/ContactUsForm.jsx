@@ -15,13 +15,13 @@ const ContactUsForm = () => {
 
 
     const submitContactForm = async (data) => {
-        console.log("logging data", data);
+        // console.log("logging data", data);
 
         try {
             setLoading(true);
             // const response = await apiConnector("POST",contacusEndpoint.CONTACT_US_API,data);
             const response = { status: "OK" }
-            console.log("logging response", response);
+            // console.log("logging response", response);
             setLoading(false);
 
         } catch (error) {
